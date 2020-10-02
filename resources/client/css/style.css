@@ -1,0 +1,56 @@
+/* main */
+
+h1 {
+    font-family: arial;
+}
+
+body {
+    font-family: arial;
+}
+
+#username, #password {
+    width: 200px;
+    height: 15px;
+    padding: 10px;
+}
+
+#list {
+    color: #f5d35b
+}
+
+#loginDiv {
+    text-align: center;
+}
+
+.loginElement {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+#login_intro {
+    text-align: left;
+    /*width: 500px;
+    margin-right: 0px;*/
+}
+
+#login_line {
+    padding-bottom: 40px;
+}
+
+#login_line {
+    border-top: 1px solid black;
+}
+
+#login_line {
+    width: 80%;
+    margin: auto;
+}
+
+li {
+    display: inline;
+    float: right;
+}
+
+#login_options {
+    float: right;
+}
