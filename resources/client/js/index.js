@@ -54,6 +54,7 @@ function sixpictures() {
             if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
                 alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
             } else {
+                console.log('responce');
                 formatWeightList(response);          //this function will create an HTML table of the data (as we
                 // did in lesson 2
             }

@@ -29,8 +29,9 @@ body {
 
 #login_intro {
     text-align: left;
-    /*width: 500px;
-    margin-right: 0px;*/
+    width: 500px;
+    margin-right: 0px;
+
 }
 
 #login_line {
