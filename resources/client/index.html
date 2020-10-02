@@ -28,27 +28,48 @@
     </div>
 
 
-
-
     <div id="login_line"></div>
 
+
+<div id="parent" >
     <div id="loginDiv">
         <form id="loginForm">
+            <h1>Log In</h1>
             <div class="loginElement">
-                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="text" name="username" class="loginbox" id="username" placeholder="Username">
             </div>
             <div class="loginElement">
-                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="password" class="loginbox" id="password" placeholder="Password">
             </div>
             <div class="loginElement">
-                <input type="submit" id="loginButton" value="Log In">
+                <input type="submit" class="index_button" id="loginButton" value="Log In">
             </div>
         </form>
     </div>
 
-    <br />
+    <div id="SignupDiv" >
+        <form id="signup" >
+            <h1>Sign Up</h1>
+            <div class="loginElement">
+                <input type="text" name="username" class="loginbox" id="username" placeholder="Username">
+            </div>
+            <div class="loginElement">
+                <input type="password" name="password" class="loginbox" id="password" placeholder="Password">
+            </div>
+            <div class="loginElement">
+                <input type="text" name="DoB" class="loginbox" id="DoB" placeholder="Date of Birth: YYYY-DD-MM">
+            </div>
+            <div class="loginElement">
+                <input type="email" name="email" class="loginbox" id="email" placeholder="Email">
+            </div>
+            <div class="loginElement">
+                <input type="submit" class="index_button" id="signupbutton" value="Sign Up">
+            </div>
+        </form>
+    </div>
+</div>
 
-    <button id="magicButton" data-banana="monkey">Magic</button>
+    <br />
 
     <div id="sixpictures()"></div>
 

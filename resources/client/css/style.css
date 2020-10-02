@@ -8,7 +8,7 @@ body {
     font-family: arial;
 }
 
-#username, #password {
+.loginbox {
     width: 200px;
     height: 15px;
     padding: 10px;
@@ -17,9 +17,20 @@ body {
 #list {
     color: #f5d35b
 }
+/* Main Divs - Index */
+
+#parent {
+    text-align: center
+}
 
 #loginDiv {
-    text-align: center;
+    display: inline-block;
+    text-align: left;
+}
+
+#SignupDiv {
+    display: inline-block;
+    text-align: right;
 }
 
 .loginElement {
@@ -50,8 +61,25 @@ body {
 li {
     display: inline;
     float: right;
+    padding: 5px;
 }
 
 #login_options {
     float: right;
+
+}
+
+a:link {
+    color: #f5d35b;
+    font-weight: bold;
+}
+
+/* Buttons */
+
+.index_button {
+    width: 60px;
+    height: 30px;
+    background-color: #f5d35b;
+    color: white;
+    border: none;
 }
