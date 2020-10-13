@@ -1,11 +1,11 @@
 /* main */
 
 h1 {
-    font-family: arial;
+    font-family: Arial;
 }
 
 body {
-    font-family: arial;
+    font-family: Arial;
 }
 
 .loginbox {
@@ -45,6 +45,10 @@ body {
 
 }
 
+.checkbox_size {
+
+}
+
 #login_line {
     padding-bottom: 40px;
 }
@@ -65,7 +69,7 @@ li {
 }
 
 #login_options {
-    float: right;
+    /*float: right;*/
 
 }
 

@@ -2,6 +2,7 @@
 
 function pageLoad() {
 
+    console.log("Pageload Evoked")
     document.getElementById('loginForm').addEventListener("submit", processLogin);
     document.getElementById("magicButton").addEventListener("click", doSomeMagic);
     sixpictures();

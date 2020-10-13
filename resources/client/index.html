@@ -30,9 +30,10 @@
 
     <div id="login_line"></div>
 
+<div id="content" style="text-align: center">
 
-<div id="parent" >
-    <div id="loginDiv">
+<div id="outer_div" style = "width: 800px; background-color: cyan; margin: 0; margin: auto ">
+    <div id="loginDiv" style="width: 45%; background-color: red;  display: inline-block; margin: 0; vertical-align: top">
         <form id="loginForm">
             <h1>Log In</h1>
             <div class="loginElement">
@@ -45,33 +46,35 @@
                 <input type="submit" class="index_button" id="loginButton" value="Log In">
             </div>
         </form>
-    </div>
+        </div>
 
-    <div id="SignupDiv" >
-        <form id="signup" >
-            <h1>Sign Up</h1>
-            <div class="loginElement">
-                <input type="text" name="username" class="loginbox" id="username" placeholder="Username">
-            </div>
-            <div class="loginElement">
-                <input type="password" name="password" class="loginbox" id="password" placeholder="Password">
-            </div>
-            <div class="loginElement">
-                <input type="text" name="DoB" class="loginbox" id="DoB" placeholder="Date of Birth: YYYY-DD-MM">
-            </div>
-            <div class="loginElement">
-                <input type="email" name="email" class="loginbox" id="email" placeholder="Email">
-            </div>
-            <div class="loginElement">
-                <input type="submit" class="index_button" id="signupbutton" value="Sign Up">
-            </div>
-        </form>
-    </div>
+<div id="SignupDiv" style="width: 45%; background-color: green; display: inline-block; margin: 0" >
+    <form id="signup" >
+        <h1>Sign Up</h1>
+        <div class="loginElement">
+            <input type="text" name="username" class="loginbox" id="username" placeholder="Username">
+        </div>
+        <div class="loginElement">
+            <input type="password" name="password" class="loginbox" id="password" placeholder="Password">
+        </div>
+        <div class="loginElement">
+            <input type="text" name="DoB" class="loginbox" id="DoB" placeholder="Date of Birth: YYYY-DD-MM">
+        </div>
+        <div class="loginElement">
+            <input type="email" name="email" class="loginbox" id="email" placeholder="Email">
+        </div>
+        <div class="loginElement">
+            <input type="submit" class="index_button" id="signupbutton" value="Sign Up">
+        </div>
+    </form>
+</div>
 </div>
 
-    <br />
+</div>
 
-    <div id="sixpictures()"></div>
+<br />
 
-    </body>
+<div id="sixpictures()"></div>
+
+</body>
 </html>
