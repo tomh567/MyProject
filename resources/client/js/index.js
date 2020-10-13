@@ -14,7 +14,7 @@ function doSomeMagic(event) {
 }
 
 function processLogin(event) {
-
+    console.log("started event")
     event.preventDefault();
 
     console.log("Login form submitted... ");
@@ -41,11 +41,9 @@ function processLogin(event) {
 }
 
 function sixpictures() {
+        console.log("Invoked pictures()");		//console.log your BFF for debugging client side
 
-    function getWeightList() {
-        console.log("Invoked getWeightList()");		//console.log your BFF for debugging client side
-
-        const url = "/weight/list/";	// API method on webserver will be in Weight class with @Path of list
+        const url = "/pictures/topSix/";	// API method on webserver will be in Weight class with @Path of list
 
         fetch(url, {
             method: "GET",
@@ -55,11 +53,10 @@ function sixpictures() {
             if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
                 alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
             } else {
-                console.log('responce');
+                console.log(responce);
                 formatWeightList(response);          //this function will create an HTML table of the data (as we
                 // did in lesson 2
             }
         });
-    }
 
 }
