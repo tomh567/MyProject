@@ -68,6 +68,10 @@ li {
     padding: 5px;
 }
 
+a:visited {
+    color: #f5d35b;
+}
+
 #login_options {
     /*float: right;*/
 

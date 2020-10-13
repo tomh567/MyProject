@@ -4,9 +4,16 @@ function pageLoad() {
 
     console.log("Pageload Evoked")
     document.getElementById('loginForm').addEventListener("submit", processLogin);
+    document.getElementById('signup').addEventListener("submit", processSignup);
     document.getElementById("magicButton").addEventListener("click", doSomeMagic);
     sixpictures();
 
+}
+
+function processSignup() {
+    console.log("Signup Initiated");
+
+    let url = "/user/signup";
 }
 
 function doSomeMagic(event) {
