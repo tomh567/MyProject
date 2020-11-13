@@ -5,8 +5,7 @@ function pageLoad() {
     console.log("Pageload Evoked")
     document.getElementById('loginForm').addEventListener("submit", processLogin);
     document.getElementById('signup').addEventListener("submit", processSignup);
-    document.getElementById("magicButton").addEventListener("click", doSomeMagic);
-    sixpictures();
+      sixpictures();
 
 }
 
@@ -16,9 +15,6 @@ function processSignup() {
     let url = "/user/signup";
 }
 
-function doSomeMagic(event) {
-    alert("Button number " + event.target.dataset.banana + " was clicked");
-}
 
 function processLogin(event) {
     console.log("started event")
@@ -49,7 +45,6 @@ function processLogin(event) {
 
 function sixpictures() {
         console.log("Invoked pictures()");		//console.log your BFF for debugging client side
-
         const url = "/pictures/topSix/";	// API method on webserver will be in Weight class with @Path of list
 
         fetch(url, {
@@ -60,10 +55,26 @@ function sixpictures() {
             if (response.hasOwnProperty("Error")) { //checks if response from server has a key "Error"
                 alert(JSON.stringify(response));    // if it does, convert JSON object to string and alert
             } else {
-                console.log(responce);
-                formatWeightList(response);          //this function will create an HTML table of the data (as we
+                console.log(response);
+                formatPictureList(response);          //this function will create an HTML table of the data (as we
                 // did in lesson 2
             }
         });
 
+}
+
+function formatPictureList(response) {
+    console.log("Invoked pictures()");
+
+    let dataHTML = "";
+
+    for (let item of response) {
+
+        dataHTML += `<div style="display: inline-block; width: 400px; item.ImagePath; margin: 10px; height: 300px;">`;
+        dataHTML += `    <div><img style="max-width: 400px" src="${item.ImagePath}"></div>`;
+        dataHTML += `    <div>${item.Comment}</div>`;
+        dataHTML += `</div>`;
+
+    }
+    document.getElementById("picturesDiv").innerHTML = dataHTML;
 }
