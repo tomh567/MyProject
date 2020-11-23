@@ -5,8 +5,16 @@ function pageLoad() {
     console.log("Pageload Evoked")
     document.getElementById('loginForm').addEventListener("submit", processLogin);
     document.getElementById('signup').addEventListener("submit", processSignup);
+    document.getElementById('upload_button').addEventListener("button", alertOptions);
       sixpictures();
 
+}
+
+function alertOptions() {
+    console.log("Add Button Initiated");
+
+    let url = "/user/addButton";
+    alert("This add button is in maintenance");
 }
 
 function processSignup() {
