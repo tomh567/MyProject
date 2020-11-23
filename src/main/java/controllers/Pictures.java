@@ -4,13 +4,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import server.Main;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @Path("pictures/")
 @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -38,8 +36,39 @@ public class Pictures {
             return response.toString();
         } catch (Exception exception) {
             System.out.println("Database error: " + exception.getMessage());
-            return "{\"Error\": \"Unable to list items.  Error code xx.\"}";
+            return "{\"Error\": \"Unable to list items.  Error code 01.\"}";
+        }
+    }
+
+    @GET
+    @Path("getPost")
+    public String getPost(@CookieParam("token") String token) {
+        try {
+            JSONArray postArray = new JSONArray();
+            PreparedStatement ps1 =Main.db.prepareStatement("SELECT UserID FROM Users WHERE Token = ?");
+            ps1.setString(1, token);
+            ResultSet rs1 = ps1.executeQuery();
+
+            PreparedStatement ps2 = Main.db.prepareStatement("" +
+                    "SELECT Pictures.ImagePath, Users.Username " +
+                    "JOIN Pictures ON Users.UserID = Pictures.UserID " +
+                    "FROM Pictures  " +
+                    "WHERE Pictures.UserID = ?");
+            
+            ps2.setInt(1, rs1.getInt(1));
+            ResultSet rs2 = ps2.executeQuery();
+            
+            while (rs2.next()) {
+                JSONObject postObject = new JSONObject();
+                postObject.put("username", rs2.getString(1));
+                postObject.put("image", rs2.getString(2));
+                postArray.add(postObject);
+            }
+            return postArray.toString();
+        } catch(SQLException exception) {
+            return "{\"Error\": \"Unable to get username.  Error code 11.\"}";
         }
     }
 }
+
 
