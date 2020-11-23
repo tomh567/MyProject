@@ -111,9 +111,7 @@ a:link {
     padding-bottom: 10px;
 }
 
-#upload_button {
-    height: 30px;
-    width: 60px;
+.homeGoldButton {
     font-family: Arial;
     background-color: #f5d35b;
     border: none;
@@ -122,7 +120,17 @@ a:link {
     border-radius: 1px;
 }
 
-#upload_button:hover {
+#upload_button {
+    height: 30px;
+    width: 60px;
+}
+
+#wishListButton {
+    height: 30px;
+    width: 120px;
+}
+
+.homeGoldButton:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -137,4 +145,8 @@ a:link {
 
 .image_hover {
     display: block;
+    padding: 10px;
+    width: 600px;
 }
+
+
