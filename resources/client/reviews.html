@@ -6,7 +6,7 @@
     <title>CricketList - Home</title>
 
     <script src="/client/js/js.cookie.min.js"></script>
-    <script src="/client/js/index.js"></script>
+    <script src="/client/js/wishListContainer.js"></script>
     <link rel="stylesheet" href="/client/css/styles.css">
 </head>
 <body>
@@ -16,6 +16,7 @@
 
 <div id="login_options">
     <ul>
+        <li><a href="index.html">LOG OUT</a></li>
         <li><a href="settings.html">SETTINGS </a></li>
         <li><a href="#help">HELP </a></li>
         <li><a href="reviews.html">HOME </a></li>
@@ -29,7 +30,39 @@
 <div id="login_line"></div>
 
 <div id="add_button" >
-    <button value="button" name="upload_button" id="upload_button" >+</button>
+    <button class="goldButton" id="upload_button" name="upload_button" value="button">+</button>
+    <button value="button" name="wishlistButton" id="wishlistButton" class="goldButton" >Create</button>
+</div>
+
+<!-- add -->
+<div id="addFriend" class="wishListContainer" >
+    <h2>Find Friends</h2>
+    <p>Search for friends who are also using this site</p>
+    <form id="searchFriends" >
+        <input type="text" name="searchName" id="searchName" placeholder="@ Search Name" />
+        <input type="submit" name="search" id="search" value="Search" class="goldButton" />
+    </form>
+    <br />
+</div>
+
+<!-- Main Container -->
+<div id="wishListContainer" class="wishListContainer">
+    <h2>Create</h2>
+    <p class="p_container_space">WishLists can be used to create a list of what kit you want later down the line. Heck! even stuff you don't plan on getting! EPIC!</p>
+
+    <p class="p_container_space">Uploading pictures can show people the kit you currently have</p>
+    <button class="goldButton" id="addWishList" name="addWishList" >Create Wishlist</button>
+    <button class="goldButton" id="addPicture" name="addPicture" >Upload Picture</button>
+</div>
+
+<!-- Name Container -->
+<div id="create_List" class="wishListContainer">
+    <h2>Name Your WishList</h2>
+    <p>Picking a name is important so you wont forget it down the line!</p>
+    <form id="nameList">
+        <input type="text" name="listName" id="listName" placeholder="eg. Tom's GM WishList"/>
+        <input type="button" name="submitWishListName" id="submitWishListName" value="Create" class="goldButton" onclick="newWebPage()" />
+    </form>
 </div>
 
 <label><label id="notifications" ><b>0</b></label> New notifications</label>
