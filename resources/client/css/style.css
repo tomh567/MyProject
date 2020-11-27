@@ -111,28 +111,30 @@ a:link {
     padding-bottom: 10px;
 }
 
-.homeGoldButton {
-    font-family: Arial;
+.goldButton {
+    font-family: Arial, cursive;
     background-color: #f5d35b;
     border: none;
     color: white;
-    font-size: 25px;
     border-radius: 1px;
+}
+
+.goldButton:hover {
+    transform: scale(1.1);
 }
 
 #upload_button {
     height: 30px;
     width: 60px;
+    font-size: 20px;
 }
 
-#wishListButton {
+#wishlistButton {
     height: 30px;
-    width: 120px;
+    width: 180px;
+    font-size: 20px;
 }
 
-.homeGoldButton:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
 
 /* Settings */
 .zoom {
@@ -145,8 +147,77 @@ a:link {
 
 .image_hover {
     display: block;
-    padding: 10px;
-    width: 600px;
 }
+
+/* WishList Container */
+
+#wishListContainer {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 600px;
+    height: 400px;
+    background-color: mintcream;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+
+}
+
+.p_container_space {
+    padding: 5px;
+}
+
+#addWishList, #addPicture {
+    right: 50%;
+    padding: 10px;
+}
+
+/* Create List Container */
+
+#create_List {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 300px;
+    height: 200px;
+    background-color: #dfe9e4;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+
+}
+
+#listName, #searchName {
+    width: 150px;
+    height: 30px;
+}
+
+#submitWishListName, #search {
+    width: 55px;
+    height: 35px;
+}
+
+/* Add Friend Container */
+
+#addFriend {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 300px;
+    height: 200px;
+    background-color: #dfe9e4;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+}
+
+/* Settings */
 
 
