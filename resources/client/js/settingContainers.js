@@ -3,12 +3,20 @@ function pageLoad() {
     hideClubContainer();
     hideDeleteContainer();
     hideDownloadContainer();
+    hidePrivacyChange();
     document.getElementById('editDetails').addEventListener('click', editDetailsContainer);
     document.getElementById('settings_club').addEventListener('click', clubHistory);
     document.getElementById('createNewClubOption').addEventListener('click', createClubOption);
     document.getElementById('delete_account_icon').addEventListener('click', deleteAccount);
     document.getElementById('download_image_icon').addEventListener('click', downloadPictures);
+    document.getElementById('deleteAccountButton').addEventListener('click', deleteWarn);
+    document.getElementById('accountPrivacyButton').addEventListener('click', changePrivacy);
+    document.getElementById('containerPadlockOpen').addEventListener('click', publicButton);
+    document.getElementById('containerPadlockClosed').addEventListener('click', privateButton);
 }
+
+// Variables
+let finalDelete = false;
 
 // Edit Container
 function editDetailsContainer(event) {
@@ -65,6 +73,18 @@ function hideDeleteContainer() {
     })
 }
 
+function deleteWarn() {
+    alert("Final Warning: Are you sure you are willing to delete your account. All pictures will be removes from your it!");
+    finalDelete = true;
+    deleteAccountFinal();
+}
+
+function deleteAccountFinal() {
+    alert("This feature is in maintenence");
+    finalDelete = false;
+}
+
+
 // Download Pictures
 function downloadPictures(event) {
     event.stopPropagation();
@@ -81,3 +101,31 @@ function hideDownloadContainer() {
 
     })
 }
+
+// Privacy Container
+function changePrivacy(event) {
+    event.stopPropagation();
+    console.log("Privacy Settings Container Initiated");
+    document.getElementById('accountPrivacy').style.display = 'block';
+}
+
+function hidePrivacyChange() {
+    document.addEventListener('mouseup', function (e) {
+        let container = document.getElementById('accountPrivacy');
+        if(!container.contains(e.target)) {
+            container.style.display = 'none';
+        }
+
+    })
+}
+
+function publicButton() {
+    document.getElementById('public_or_private').innerHTML = "Public";
+}
+
+function privateButton() {
+    document.getElementById('public_or_private').innerHTML = "Private";
+}
+
+
+
