@@ -68,6 +68,9 @@ function hideContainerFriends() {
     })
 }
 
+// Delete Account
+
+
 // Webpage List
 
 function newWebPage() {

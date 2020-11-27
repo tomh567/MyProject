@@ -6,7 +6,7 @@
     <title>CricketList - Settings</title>
 
     <script src="/client/js/js.cookie.min.js"></script>
-    <script src="/client/js/index.js"></script>
+    <script src="/client/js/settingContainers.js"></script>
     <link rel="stylesheet" href="/client/css/styles.css">
 </head>
 <body>
@@ -29,22 +29,82 @@
 
 <div id="login_line"></div>
 
+<!-- Settings Icons -->
 <div id="settings_icon" class="image_hover" id="red">
-<img src="https://img.icons8.com/ios/50/000000/add-user-group-man-man--v1.png" class="zoom"/>
+<input type="image" img src="https://img.icons8.com/ios/50/000000/add-user-group-man-man--v1.png" class="zoom" id="editDetails"/>
     <span> Edit Details</span>
 </div>
 
 <div id="delete_account_icon" class="image_hover" id="green">
-    <img src="https://img.icons8.com/ios/50/000000/settings.png" class="zoom"/>
-    <span> Preferences</span>
+    <input type="image" img src="https://img.icons8.com/ios/50/000000/settings.png" class="zoom" id="deleteAccount"/>
+    <span> Delete Account</span>
 </div>
 
 <div id="download_image_icon" class="image_hover" >
-    <img src="https://img.icons8.com/ios/50/000000/download-2--v1.png" class="zoom"/>
+    <input type="image" img src="https://img.icons8.com/ios/50/000000/download-2--v1.png" class="zoom" id="downloadImages"/>
     <span> Download Pictures</span>
 </div>
 
 <div id="settings_club" class="image_hover" >
-    <img src="https://img.icons8.com/ios/50/000000/folder-invoices--v2.png" class="zoom"/>
+    <input type="image" img src="https://img.icons8.com/ios/50/000000/folder-invoices--v2.png" class="zoom" id="clubHistory"/>
     <span> Add Club History</span>
+</div>
+
+
+<!-- Containers -->
+<div id="editDetailsContainer" >
+    <h2>Edit Details</h2>
+    <p>What details would you like to change?</p>
+    <form id="editDetails" >
+        <div>
+            <input type="checkbox" id="changeUserBox" />
+            <label>Username</label>
+            <br />
+            <input type="checkbox" id="changeUserBox" />
+            <label>Password</label>
+            <br />
+            <input type="checkbox" id="changeUserBox" />
+            <label>Email</label>
+            <br />
+            <br />
+        </div>
+        <input type="button" class="goldButton" id="sendOffNewSDetails" value="Submit" />
+    </form>
+</div>
+
+<div id="addClubHistory">
+    <h2>Add Club History</h2>
+    <label>Add up to 3 Clubs</label>
+    <br />
+    <br />
+    <button class="goldButton" id="createNewClubOption" value="test">+</button>
+    <div id="pClub1"></div>
+    <div id="pClub2"></div>
+    <div id="pClub3"></div>
+
+    <h2>Join New Club</h2>
+    <label>Type in your New Club Bellow!</label>
+    <br />
+    <form id="typeNewClub" >
+        <input type="type" class="containerInput" id="inputNewClub" />
+        <input type="submit" class="goldButton" id="submitNewClub" />
+    </form>
+</div>
+
+<div id="deleteAccountContainer">
+    <h2>Delete Accounts</h2>
+    <label>Delete Account!</label>
+    <p>Wait! Are you sure you want to delete your account? You can always change your details in the Edit Details part of the settings!</p>
+    <button class="goldButton" id="deleteAccountButton" name="delete">Delete</button>
+</div>
+
+<div id="downloadPictures">
+    <h2>Download Pictures</h2>
+    <p>Download your pictures you've uploaded to the account</p>
+    <select name="cars" id="cars">
+        <option value="Picture 1">Picture 1</option>
+        <option value="Picture 2">Picture 2</option>
+        <option value="Picture 3">Picture 3</option>
+        <option value="Picture 4">Picture 4</option>
+    </select>
 </div>

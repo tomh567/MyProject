@@ -81,6 +81,17 @@ a:link {
     color: #f5d35b;
     font-weight: bold;
 }
+/* Standard sizes */
+
+.containerInput {
+    width: 150px;
+    height: 30px;
+}
+
+.containerButton {
+    width: 55px;
+    height: 35px;
+}
 
 /* Buttons */
 
@@ -197,7 +208,7 @@ a:link {
     height: 30px;
 }
 
-#submitWishListName, #search {
+#submitWishListName, #search, #submitNewClub {
     width: 55px;
     height: 35px;
 }
@@ -220,4 +231,81 @@ a:link {
 
 /* Settings */
 
+/* Edit Details */
 
+#editDetailsContainer {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 300px;
+    height: 250px;
+    background-color: mintcream;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+}
+
+#sendOffNewSDetails {
+    height: 35px;
+    width: 55px;
+}
+
+/* Club History */
+
+#addClubHistory {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 300px;
+    height: 350px;
+    background-color: mintcream;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+}
+
+#createNewClubOption {
+    height: 35px;
+    width: 55px;
+}
+
+/* Delete Account */
+
+#deleteAccountContainer {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 400px;
+    height: 220px;
+    background-color: mintcream;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+}
+
+#deleteAccountButton {
+    height: 35px;
+    width: 55px;
+}
+
+/* Download Pictures */
+
+#downloadPictures {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 400px;
+    height: 220px;
+    background-color: mintcream;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+}
