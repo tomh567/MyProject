@@ -5,17 +5,11 @@ function pageLoad() {
     console.log("Pageload Evoked")
     document.getElementById('loginForm').addEventListener("submit", processLogin);
     document.getElementById('signup').addEventListener("submit", processSignup);
-    document.getElementById('upload_button').addEventListener("button", alertOptions);
       sixpictures();
 
 }
 
-function alertOptions() {
-    console.log("Add Button Initiated");
 
-    let url = "/user/addButton";
-    alert("This add button is in maintenance");
-}
 
 function processSignup() {
     console.log("Signup Initiated");
@@ -86,3 +80,11 @@ function formatPictureList(response) {
     }
     document.getElementById("picturesDiv").innerHTML = dataHTML;
 }
+
+//Wishlist Container Function
+
+function wishListContainer() {
+    console.log("Wishlist Evoked");
+
+}
+
