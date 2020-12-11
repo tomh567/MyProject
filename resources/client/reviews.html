@@ -7,6 +7,10 @@
 
     <script src="/client/js/js.cookie.min.js"></script>
     <script src="/client/js/wishListContainer.js"></script>
+
+    <script src="/client/js/js.cookie.min.js"></script>
+    <script src="/client/js/uploadImage.js"></script>
+
     <link rel="stylesheet" href="/client/css/styles.css">
 </head>
 <body>
@@ -52,7 +56,7 @@
 
     <p class="p_container_space">Uploading pictures can show people the kit you currently have</p>
     <button class="goldButton" id="addWishList" name="addWishList" >Create Wishlist</button>
-    <button class="goldButton" id="addPicture" name="addPicture" >Upload Picture</button>
+    <button class="goldButton" id="addPicture" name="addPicture" onclick="testButtonPress()">Upload Picture</button>
 </div>
 
 <!-- Name Container -->
@@ -65,6 +69,37 @@
     </form>
 </div>
 
+<!-- Upload a picture -->
+<div id="uploadImage" >
+    <h2>Upload Picture</h2>
+    <p>Chose a picture to upload to the site!</p>
+    <form id="uploadImageForm">
+        <input type="file" id="the-file" name="filename" class="goldButton" accept="image/png, image/jpg" >
+        <br />
+        <br />
+
+    </form>
+    <button class="goldButton" onclick="uploadImage()" id="toServerButton"> SUBMIT </button>
+</div>
+
+<!-- Picture Details -->
+<div id="pictureDetails" >
+    <form id="addDetailsToPictures">
+        <h2>Add Details to your Image</h2>
+        <p>Add a date, comment and name to your image!</p>
+        <input type="text" id="imageDate" class="containerInput" placeholder="Add Date: yyyy-mm-dd" />
+        <br />
+        <br />
+        <input type="text" id="imageComment"class="containerInput" placeholder="Add Comment To Image" />
+        <br />
+        <br />
+        <input type="text" id="imageName" class="containerInput" placeholder="Add Name To Image" />
+        <br />
+        <br />
+        <button class="goldButton" id="submitPictureDetails onclick="finalUpload" >Upload Image</button>
+    </form>
+</div>
+
 <label><label id="notifications" ><b>0</b></label> New notifications</label>
 
 <div class="spacer_1"></div>
@@ -72,13 +107,9 @@
 <div class="standard_format" >
     <div class="box_outer" >
         <label>Your Friend, <div id="friend_name"> </div> Has Recently Uploaded <div id="update_number_of_posts"> </div> Posts </label>
-        <p> This is a placeholder for the image</p>
-        <div id="pictureComment" ></div>
+
     </div>
-    <div id="pictureDate" > </div>
 </div>
-
-
 
 </body>
 </html>

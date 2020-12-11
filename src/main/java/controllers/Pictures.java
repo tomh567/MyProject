@@ -1,14 +1,19 @@
 package controllers;
 
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import server.Main;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
+import java.io.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.UUID;
 
 @Path("pictures/")
 @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -69,6 +74,76 @@ public class Pictures {
             return "{\"Error\": \"Unable to get username.  Error code 11.\"}";
         }
     }
+
+    @POST
+    @Path("image")
+    public String userImage(@CookieParam("token") Cookie sessionCookie, @FormDataParam("file") InputStream uploadedInputStream,
+                            @FormDataParam("file") FormDataContentDisposition fileDetail, @FormDataParam("date") String date, @FormDataParam("comment") String comment, @FormDataParam("name") String name) throws Exception {
+        
+        System.out.println("Invoked User.userImage()");
+
+        String fileName = fileDetail.getFileName();  //file name submitted through form
+        int dot = fileName.lastIndexOf('.');            //find where the . is to get the file extension
+        String fileExtension = fileName.substring(dot + 1);   //get file extension from fileName
+        String newFileName = "client/img/" + UUID.randomUUID() + "." + fileExtension;  //create a new unique identifier for file and append extension
+
+        int userID = validateSessionCookie(sessionCookie);  //validate UUID sent from browser to get userID
+        if (userID == -1) {
+            return "Error:  Could not validate user";
+        }
+
+        PreparedStatement statement = Main.db.prepareStatement("INSERT INTO Pictures(Date, Comment, Name, ImagePath) VALUES (?,?,?,?)");
+        statement.setString(1, date);
+        statement.setString(2, comment);
+        statement.setString(3, name);
+        statement.setString(4, newFileName);
+        statement.executeUpdate();
+
+        String uploadedFileLocation = "C:\\Users\\92563\\IdeaProjects\\MyProject\\resources\\" + newFileName;
+
+        try {
+            int read = 0;
+            byte[] bytes = new byte[1024];
+            OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
+            while ((read = uploadedInputStream.read(bytes)) != -1) {
+                out.write(bytes, 0, read);
+            }
+            out.flush();
+            out.close();
+            System.out.println("File uploaded to server and imageLink saved to database");
+            return "File uploaded to server and imageLink saved to database";
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+            return "{\"Error\": \"Something as gone wrong.  Please contact the administrator with the error code UC-UI. \"}";
+        }
+
+
+    }
+
+    public static int validateSessionCookie(Cookie sessionCookie) {     //returns the userID that of the record with the cookie value
+
+        String token = sessionCookie.getValue();
+        System.out.println("Invoked User.validateSessionCookie(), cookie value " + token);
+
+        try {
+            PreparedStatement statement = Main.db.prepareStatement(
+                    "SELECT UserID FROM Users WHERE Token = ?"
+            );
+            statement.setString(1, token);
+            ResultSet resultSet = statement.executeQuery();
+            System.out.println("userID is " + resultSet.getInt("UserID"));
+            return resultSet.getInt("UserID");  //Retrieve by column name  (should really test we only get one result back!)
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return -1;  //rogue value indicating error
+
+        }
+    }
+
+
 }
+
 
 

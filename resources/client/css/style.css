@@ -229,6 +229,26 @@ a:link {
     text-align: center;
 }
 
+/* upload image container */
+#uploadImage {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 300px;
+    height: 200px;
+    background-color: #dfe9e4;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+}
+
+#myFile {
+
+}
+
+
 /* Settings */
 
 /* Edit Details */
@@ -330,22 +350,26 @@ a:link {
     text-align: center;
 }
 
-/* Find your Club */
-#findYourClub {
+/* Upload Picture ting */
+
+#pictureDetails {
     display: none;
     position: fixed;
     left: 40%;
     right: 50%;
     top: 30%;
     width: 400px;
-    height: 220px;
+    height: 320px;
     background-color: mintcream;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
     border: solid black 1px;
     text-align: center;
 }
 
-#findClubButton {
-    height: 35px;
-    width: 120px;
+
+
+
+#submitPictureDetails {
+    width: 100px;
+    height: 30px;
 }
