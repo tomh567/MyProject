@@ -108,13 +108,13 @@ a:link {
     padding-top: 10px;
 }
 .standard_format {
-    background-color: blue;
+    background-color: #f5d35b;
     padding: 5px;
     width: 500px;
 }
 
 .box_outer {
-    background-color: red;
+    background-color: #eaeaea;
     display: inherit;
 }
 
