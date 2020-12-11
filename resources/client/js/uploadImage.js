@@ -27,6 +27,22 @@ function uploadImage() {
 
     console.log("Wishlist Evoked");
     document.getElementById("pictureDetails").style.display = 'block';
+
+    function finalUpload() {
+        fetch("pictures/userImage", {
+            method: "POST",
+            body: formData,
+        }).then(response => {
+            return response.text()          //method returns a promise, have to return from here to get text
+        }).then(response => {
+            if (response.startsWith('Error')) {
+                alert(response);
+            } else {
+
+
+            }
+        });
+    }
 }
 
 

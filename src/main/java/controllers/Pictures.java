@@ -78,7 +78,7 @@ public class Pictures {
     @POST
     @Path("image")
     public String userImage(@CookieParam("token") Cookie sessionCookie, @FormDataParam("file") InputStream uploadedInputStream,
-                            @FormDataParam("file") FormDataContentDisposition fileDetail) throws Exception {
+                            @FormDataParam("file") FormDataContentDisposition fileDetail, @FormDataParam("date") String date, @FormDataParam("comment") String comment, @FormDataParam("name") String name) throws Exception {
         
         System.out.println("Invoked User.userImage()");
 
@@ -92,9 +92,11 @@ public class Pictures {
             return "Error:  Could not validate user";
         }
 
-        PreparedStatement statement = Main.db.prepareStatement("UPDATE Pictures SET ImagePath = ? WHERE UserID = ?");
-        statement.setString(1, newFileName);
-        statement.setInt(2, userID);
+        PreparedStatement statement = Main.db.prepareStatement("INSERT INTO Pictures(Date, Comment, Name, ImagePath) VALUES (?,?,?,?)";
+        statement.setString(1, date);
+        statement.setString(2, comment);
+        statement.setString(3, name);
+        statement.setString(4, newFileName);
         statement.executeUpdate();
 
         String uploadedFileLocation = "C:\\Users\\92563\\IdeaProjects\\MyProject\\resources\\" + newFileName;
