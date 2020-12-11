@@ -329,3 +329,23 @@ a:link {
     border: solid black 1px;
     text-align: center;
 }
+
+/* Find your Club */
+#findYourClub {
+    display: none;
+    position: fixed;
+    left: 40%;
+    right: 50%;
+    top: 30%;
+    width: 400px;
+    height: 220px;
+    background-color: mintcream;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    border: solid black 1px;
+    text-align: center;
+}
+
+#findClubButton {
+    height: 35px;
+    width: 120px;
+}

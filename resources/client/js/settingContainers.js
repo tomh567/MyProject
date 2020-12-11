@@ -6,13 +6,13 @@ function pageLoad() {
     hidePrivacyChange();
     document.getElementById('editDetails').addEventListener('click', editDetailsContainer);
     document.getElementById('settings_club').addEventListener('click', clubHistory);
-    document.getElementById('createNewClubOption').addEventListener('click', createClubOption);
     document.getElementById('delete_account_icon').addEventListener('click', deleteAccount);
     document.getElementById('download_image_icon').addEventListener('click', downloadPictures);
     document.getElementById('deleteAccountButton').addEventListener('click', deleteWarn);
     document.getElementById('accountPrivacyButton').addEventListener('click', changePrivacy);
     document.getElementById('containerPadlockOpen').addEventListener('click', publicButton);
     document.getElementById('containerPadlockClosed').addEventListener('click', privateButton);
+    document.getElementById('createNewClubOption').addEventListener('click', selectClub);
 }
 
 // Variables
@@ -52,9 +52,19 @@ function hideClubContainer() {
     })
 }
 
-function createClubOption() {
-    document.getElementById('pClub1').value = "Camberley";
+
+function selectClub(event) {
+    event.stopPropagation();
+    console.log("club Details Evoked");
+    document.getElementById("findYourClub").style.display = 'block';
+    document.getElementById('findClubButton').addEventListener('click', closeClub);
 }
+
+function closeClub() {
+    document.getElementById("findYourClub").style.display = 'none';
+    document.getElementById("addClubHistory").style.display = 'block';
+}
+
 
 // Delete Account
 function deleteAccount(event) {
