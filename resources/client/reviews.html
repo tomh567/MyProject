@@ -7,6 +7,10 @@
 
     <script src="/client/js/js.cookie.min.js"></script>
     <script src="/client/js/wishListContainer.js"></script>
+
+    <script src="/client/js/js.cookie.min.js"></script>
+    <script src="/client/js/uploadImage.js"></script>
+
     <link rel="stylesheet" href="/client/css/styles.css">
 </head>
 <body>
@@ -52,7 +56,7 @@
 
     <p class="p_container_space">Uploading pictures can show people the kit you currently have</p>
     <button class="goldButton" id="addWishList" name="addWishList" >Create Wishlist</button>
-    <button class="goldButton" id="addPicture" name="addPicture" >Upload Picture</button>
+    <button class="goldButton" id="addPicture" name="addPicture" onclick="testButtonPress()">Upload Picture</button>
 </div>
 
 <!-- Name Container -->
@@ -62,6 +66,37 @@
     <form id="nameList">
         <input type="text" name="listName" id="listName" placeholder="eg. Tom's GM WishList"/>
         <input type="button" name="submitWishListName" id="submitWishListName" value="Create" class="goldButton" onclick="newWebPage()" />
+    </form>
+</div>
+
+<!-- Upload a picture -->
+<div id="uploadImage" >
+    <h2>Upload Picture</h2>
+    <p>Chose a picture to upload to the site!</p>
+    <form id="uploadImageForm">
+        <input type="file" id="the-file" name="filename" class="goldButton" accept="image/png, image/jpg" >
+        <br />
+        <br />
+
+    </form>
+    <button class="goldButton" onclick="uploadImage()" id="toServerButton"> SUBMIT </button>
+</div>
+
+<!-- Picture Details -->
+<div id="pictureDetails" >
+    <form id="addDetailsToPictures">
+        <h2>Add Details to your Image</h2>
+        <p>Add a date, comment and name to your image!</p>
+        <input type="text" id="imageDate" class="containerInput" placeholder="Add Date: yyyy-mm-dd" />
+        <br />
+        <br />
+        <input type="text" id="imageComment"class="containerInput" placeholder="Add Comment To Image" />
+        <br />
+        <br />
+        <input type="text" id="imageName" class="containerInput" placeholder="Add Name To Image" />
+        <br />
+        <br />
+        <button class="goldButton" id="submitPictureDetails" >Upload Image</button>
     </form>
 </div>
 
@@ -75,10 +110,6 @@
 
     </div>
 </div>
-
-
-
-
 
 </body>
 </html>

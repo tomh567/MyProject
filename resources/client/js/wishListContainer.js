@@ -4,10 +4,12 @@ function pageLoad() {
     hideContainer();
     hideContainerName();
     hideContainerFriends();
+    hideContainerUploadPicture();
     document.getElementById('wishlistButton').addEventListener("click", wishListContainer);
     document.getElementById('addWishList').addEventListener("click", nameListContainer);
     document.getElementById('upload_button').addEventListener("click", addFriendContainer);
-    document.getElementById('submitWishListName').addEventListener('click', createWebPageList);
+  //  document.getElementById('submitWishListName').addEventListener('click', createWebPageList);
+  //  document.getElementById('addPicture').addEventListener("click", uploadPicture);
 }
 
 //Wishlist Container Function
@@ -70,6 +72,8 @@ function hideContainerFriends() {
 
 // Delete Account
 
+// Upload a picture
+
 
 // Webpage List
 
@@ -78,6 +82,22 @@ function newWebPage() {
     let webName = document.getElementById('listName').innerHTML;
 
     document.getElementById("replaceName").value = webName;
+}
+
+// check button press
+function testButtonPress(event) {
+    console.log("Name List Evoked");
+    document.getElementById("uploadImage").style.display = 'block';
+}
+
+function hideContainerUploadPicture() {
+    document.addEventListener('mouseup', function (e) {
+        let container = document.getElementById('uploadImage');
+        if(!container.contains(e.target)) {
+            container.style.display = 'none';
+        }
+
+    })
 }
 
 
