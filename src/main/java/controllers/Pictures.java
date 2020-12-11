@@ -92,7 +92,7 @@ public class Pictures {
             return "Error:  Could not validate user";
         }
 
-        PreparedStatement statement = Main.db.prepareStatement("INSERT INTO Pictures(Date, Comment, Name, ImagePath) VALUES (?,?,?,?)";
+        PreparedStatement statement = Main.db.prepareStatement("INSERT INTO Pictures(Date, Comment, Name, ImagePath) VALUES (?,?,?,?)");
         statement.setString(1, date);
         statement.setString(2, comment);
         statement.setString(3, name);

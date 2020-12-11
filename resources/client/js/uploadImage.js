@@ -29,9 +29,13 @@ function uploadImage() {
     document.getElementById("pictureDetails").style.display = 'block';
 
     function finalUpload() {
+        console.log("test for getting image stuff");
+        var date = document.getElementById("imageDate");
+        var comment = document.getElementById("imageComment");
+        var name = document.getElementById("imageName");
         fetch("pictures/userImage", {
             method: "POST",
-            body: formData,
+            body: formData, date, comment, name,
         }).then(response => {
             return response.text()          //method returns a promise, have to return from here to get text
         }).then(response => {
