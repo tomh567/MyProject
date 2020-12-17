@@ -39,7 +39,7 @@ function processLogin(event) {
         } else {
             Cookies.set("token", response.token);
             Cookies.set("username", response.username);
-            window.open("index.html", "_self");       //open index.html in same tab
+            window.open("uploadPicture.html", "_self");       //open uploadPicture.html in same tab
         }
     });
 

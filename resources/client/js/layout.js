@@ -1,6 +1,6 @@
 // layout
 
-function pageLoad() {
+function pageLoad2() {
     hideContainer();
     hideContainerName();
     hideContainerFriends();
