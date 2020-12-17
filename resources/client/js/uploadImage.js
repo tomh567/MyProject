@@ -42,11 +42,28 @@ function uploadImage() {
             if (response.startsWith('Error')) {
                 alert(response);
             } else {
-
+                formatPictureListUpload(response);
 
             }
         });
     }
+}
+
+
+function formatPictureListUpload(response) {
+    console.log("Invoked pictures()");
+
+    let dataHTML = "";
+
+    for (let item of response) {
+
+        dataHTML += `<div style="display: inline-block; width: 400px; item.ImagePath; margin: 10px; height: 300px;">`;
+        dataHTML += `    <div><img style="max-width: 400px" src="${item.ImagePath}"></div>`;
+        dataHTML += `    <div>${item.Comment}</div>`;
+        dataHTML += `</div>`;
+
+    }
+    document.getElementById("picturesDiv").innerHTML = dataHTML;
 }
 
 

@@ -6,7 +6,7 @@
     <title>CricketList - WishList</title>
 
     <script src="/client/js/js.cookie.min.js"></script>
-    <script src="/client/js/wishListContainer.js"></script>
+    <script src="/client/js/wishListCode.js"></script>
     <link rel="stylesheet" href="/client/css/styles.css">
 </head>
 <body>
@@ -31,8 +31,39 @@
 
 <h1><div id="replaceName"></div></h1>
 
+<div id="addRowButton">
+    <h2 id="extraWidth">Add Row</h2>
+    <input type="button" class="goldButton" id="addRowButton" value="+" />
+</div>
 
+<div id="padding" ></div>
 
+<div id="tableSpace" >
+
+</div>
+
+<div id="addRowDetailsContainer" >
+    <h2>Details</h2>
+    <h4>Type</h4>
+    <form id="dropDownTypeList" >
+        <select name="typeRow" id="typeOfRow">
+            <option value="Bat">Bat</option>
+            <option value="Ball">Ball</option>
+            <option value="Pads">Pads</option>
+            <option value="Gloves">Gloves</option>
+            <option value="Wicket Keeping">Wicket Keeping</option>
+            <option value="Other">Other</option>
+        </select>
+        <br />
+        <h4>Link to Webpage</h4>
+        <input type="text" name="linkToWebPage" id="linkToWebPage" class="containerInput" />
+        <h4>Price</h4>
+        <input type="text" name="price" id="price" class="containerInput" placeholder="£"/>
+        <h4>Name</h4>
+        <input type="text" name="name" id="itemName" class="containerInput" placeholder="GM Bat"/>
+        <input type="button" id="createWishListDetails" class="goldButton" id="createWishList" value="Go!"/>
+    </form>
+</div>
 
 </body>
 </html>

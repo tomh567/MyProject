@@ -78,10 +78,12 @@ function hideContainerFriends() {
 // Webpage List
 
 function newWebPage() {
-    location.replace("WishList.html")
-    let webName = document.getElementById('listName').innerHTML;
+    var x = document.forms["nameList"]["listName"].value;
+    console.log("check 1");
+    location.replace("WishList.html");
+    document.getElementById("replaceName").value = document.getElementById('listName').innerHTML;
 
-    document.getElementById("replaceName").value = webName;
+    if (x == "") alert("Please enter a name");
 }
 
 // check button press
