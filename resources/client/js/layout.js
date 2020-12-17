@@ -1,11 +1,11 @@
-// Wishlist Container
+// layout
 
 function pageLoad() {
     hideContainer();
     hideContainerName();
     hideContainerFriends();
     hideContainerUploadPicture();
-    document.getElementById('wishlistButton').addEventListener("click", wishListContainer);
+    document.getElementById('wishlistButton').addEventListener("click", layout);
     document.getElementById('addWishList').addEventListener("click", nameListContainer);
     document.getElementById('upload_button').addEventListener("click", addFriendContainer);
   //  document.getElementById('submitWishListName').addEventListener('click', createWebPageList);
@@ -14,7 +14,7 @@ function pageLoad() {
 
 //Wishlist Container Function
 
-function wishListContainer(event) {
+function layout(event) {
     event.stopPropagation();
     console.log("Wishlist Evoked");
     document.getElementById("wishListContainer").style.display = 'block';

@@ -26,6 +26,31 @@ public class Pictures {
         System.out.println("Invoked pictures.picturesTopSix()");
         JSONArray response = new JSONArray();
         try {
+            PreparedStatement ps = Main.db.prepareStatement("SELECT PictureID, UserID, Date, Comment, Name, ImagePath FROM Pictures LIMIT 6");
+            ResultSet results = ps.executeQuery();
+            while (results.next()==true) {
+                JSONObject row = new JSONObject();
+                row.put("PictureID", results.getInt(1));
+                row.put("UserID", results.getString(2));
+                row.put("Date", results.getString(3));
+                row.put("Comment", results.getString(4));
+                row.put("Name", results.getString(5));
+                row.put("ImagePath", results.getString(6));
+                response.add(row);
+            }
+            return response.toString();
+        } catch (Exception exception) {
+            System.out.println("Database error: " + exception.getMessage());
+            return "{\"Error\": \"Unable to list items.  Error code 01.\"}";
+        }
+    }
+
+    @GET
+    @Path("list")
+    public String picturesList() {
+        System.out.println("Invoked pictures.picturesList()");
+        JSONArray response = new JSONArray();
+        try {
             PreparedStatement ps = Main.db.prepareStatement("SELECT PictureID, UserID, Date, Comment, Name, ImagePath FROM Pictures");
             ResultSet results = ps.executeQuery();
             while (results.next()==true) {
