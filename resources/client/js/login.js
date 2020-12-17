@@ -1,11 +1,11 @@
 "use strict";
 
-function pageLoad() {
+function pageLoad3() {
 
     console.log("Pageload Evoked")
     document.getElementById('loginForm').addEventListener("submit", processLogin);
     document.getElementById('signup').addEventListener("submit", processSignup);
-      sixpictures();
+    sixpictures();
 
 }
 
@@ -27,6 +27,7 @@ function processLogin(event) {
     let url = "/user/login";
     let formData = new FormData(document.getElementById('loginForm'));
 
+    console.log("checking again")
     fetch(url, {
         method: "POST",
         body: formData,

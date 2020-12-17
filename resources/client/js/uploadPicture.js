@@ -54,6 +54,7 @@ function uploadPicture() {
             alert(response);
         } else {
             document.getElementById("pictureDetails").style.display = 'block';
+            console.log("cheese");
 
         }
     });
@@ -68,7 +69,7 @@ function addImageDetails() {
     var name = document.getElementById("imageName");
     fetch("pictures/userImage", {
         method: "POST",
-        body: formData, date, comment, name,
+        body: formData, userID, date, comment, name,
     }).then(response => {
         return response.text()          //method returns a promise, have to return from here to get text
     }).then(response => {
