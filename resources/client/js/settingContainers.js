@@ -13,6 +13,7 @@ function pageLoad() {
     document.getElementById('containerPadlockOpen').addEventListener('click', publicButton);
     document.getElementById('containerPadlockClosed').addEventListener('click', privateButton);
     document.getElementById('createNewClubOption').addEventListener('click', selectClub);
+    document.getElementById("logOutOfAccount").addEventListener('click', logOut);
 }
 
 // Variables
@@ -135,6 +136,11 @@ function publicButton() {
 
 function privateButton() {
     document.getElementById('public_or_private').innerHTML = "Private";
+}
+
+// Log Out
+function logOut() {
+
 }
 
 
