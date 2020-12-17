@@ -125,7 +125,7 @@ public class Pictures {
         statement.setString(5, newFileName);
         statement.executeUpdate();
 
-        String uploadedFileLocation = "C:\\Users\\92563\\IdeaProjects\\MyProject\\resources\\" + newFileName;
+        String uploadedFileLocation = "C:\\Users\\44782\\IdeaProjects\\MyProject4\\resources\\" + newFileName;
 
         try {
             int read = 0;
