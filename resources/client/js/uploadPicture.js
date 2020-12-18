@@ -32,6 +32,17 @@ function formatPictureList(response) {
         dataHTML += '<br />';
 
     }
+
+    let oneInBox = "";
+
+    for (let item of response) {
+        oneInBox += '<div class="box_outer">';
+        oneInBox += '<label>Your Friend <div id="friend_name"></div> Has recently uploaded<div id="update_number_of_posts"></div> Posts</label>';
+        oneInBox += '<div id="picturesDiv"></div>'
+        oneInBox += '</div>';
+    }
+
+
     document.getElementById("picturesDiv").innerHTML = dataHTML;
 }
 
