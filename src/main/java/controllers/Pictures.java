@@ -131,7 +131,7 @@ public class Pictures {
         }
 
 
-         String uploadedFileLocation = "C:\\Users\\Rachel\\IdeaProjects\\MyProjectTomHoldenv6\\resources\\" + newFileName;
+         String uploadedFileLocation = "C:\\Users\\44782\\IdeaProjects\\Tom'sCoursework\\resources\\" + newFileName;
 
         try {
             int read = 0;
