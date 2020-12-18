@@ -47,14 +47,16 @@ function formatPictureList(response) {
 }
 
 
-function uploadPicture() {
-    console.log("invoked uploadPicture()");
+function index() {
+    console.log("invoked index()");
     var fileInput = document.getElementById('the-file');
     var file = fileInput.files[0];
-    var formData = new FormData();
+
+    const formData = new FormData(document.getElementById('frmUploadImage'));
+
     formData.append('file', file);
 
-    const url = "/pictures/image";
+    const url = "/pictures/upload";
 
     fetch(url, {
         method: "POST",
@@ -65,8 +67,9 @@ function uploadPicture() {
         if (response.startsWith('Error')) {
             alert(response);
         } else {
-            document.getElementById("pictureDetails").style.display = 'block';
-            console.log("cheese");
+            document.getElementById("frmUploadImage").style.display = 'block';
+            console.log("Image uploaded successfully");
+            pageLoad1() //to reload the page and show new image
 
         }
     });
@@ -74,25 +77,7 @@ function uploadPicture() {
 }
 
 
-function addImageDetails() {
-    console.log("test for getting image stuff");
-    var date = document.getElementById("imageDate").value;
-    var comment = document.getElementById("imageComment").value;
-    var name = document.getElementById("imageName").value;
-    fetch("/pictures/userImage", {
-        method: "POST",
-        body: formData, userID, date, comment, name,
-    }).then(response => {
-        return response.text()          //method returns a promise, have to return from here to get text
-    }).then(response => {
-        if (response.startsWith('Error')) {
-            alert(response);
-        } else {
-            formatPictureListUpload(response);
 
-        }
-    });
-}
 
 
 

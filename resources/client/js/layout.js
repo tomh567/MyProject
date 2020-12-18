@@ -9,7 +9,7 @@ function pageLoad2() {
     document.getElementById('addWishList').addEventListener("click", nameListContainer);
     document.getElementById('upload_button').addEventListener("click", addFriendContainer);
   //  document.getElementById('submitWishListName').addEventListener('click', createWebPageList);
-  //  document.getElementById('addPicture').addEventListener("click", uploadPicture);
+  //  document.getElementById('addPicture').addEventListener("click", index);
 }
 
 //Wishlist Container Function

@@ -20,6 +20,7 @@ import java.util.UUID;
 @Produces(MediaType.APPLICATION_JSON)
 
 public class Pictures {
+
     @GET
     @Path("topSix")
     public String picturesTopSix() {
@@ -101,31 +102,36 @@ public class Pictures {
     }
 
     @POST
-    @Path("image")
-    public String image(@CookieParam("token") Cookie sessionCookie, @FormDataParam("file") InputStream uploadedInputStream,
-                            @FormDataParam("file") FormDataContentDisposition fileDetail, @FormDataParam("date") String date, @FormDataParam("comment") String comment, @FormDataParam("name") String name) throws Exception {
+    @Path("upload")
+    public String upload (@CookieParam("token") Cookie sessionCookie, @FormDataParam("file") InputStream uploadedInputStream, @FormDataParam("file") FormDataContentDisposition fileDetail,
+                        @FormDataParam("date") String date, @FormDataParam("comment") String comment, @FormDataParam("name") String name) throws Exception {
         
         System.out.println("Invoked User.userImage()");
 
         String fileName = fileDetail.getFileName();  //file name submitted through form
-        int dot = fileName.lastIndexOf('.');            //find where the . is to get the file extension
+        int dot = fileName.lastIndexOf('.');            //find where the . is to get the file extensionFriendsList
         String fileExtension = fileName.substring(dot + 1);   //get file extension from fileName
-        String newFileName = "client/img/" + UUID.randomUUID() + "." + fileExtension;  //create a new unique identifier for file and append extension
+        String newFileName = "/client/img/" + UUID.randomUUID() + "." + fileExtension;  //create a new unique identifier for file and append extension
 
         int userID = validateSessionCookie(sessionCookie);  //validate UUID sent from browser to get userID
         if (userID == -1) {
-            return "Error:  Could not validate user";
+            return "{\"Error\": \"Unable to get username.\"}";
         }
 
-        PreparedStatement statement = Main.db.prepareStatement("INSERT INTO Pictures(UserID, Date, Comment, Name, ImagePath) VALUES (?,?,?,?,?)");
-        statement.setInt(1, userID);
-        statement.setString(2, date);
-        statement.setString(3, comment);
-        statement.setString(4, name);
-        statement.setString(5, newFileName);
-        statement.executeUpdate();
+        try {
+            PreparedStatement statement = Main.db.prepareStatement("INSERT INTO Pictures(UserID, Date, Comment, Name, ImagePath) VALUES (?,?,?,?,?)");
+            statement.setInt(1, userID);
+            statement.setString(2, date);
+            statement.setString(3, comment);
+            statement.setString(4, name);
+            statement.setString(5, newFileName);
+            statement.executeUpdate();
+        } catch(SQLException exception) {
+            return "{\"Error\": \"Unable to get update database with images details.  Error code xxx.\"}";
+        }
 
-        String uploadedFileLocation = "C:\\Users\\44782\\IdeaProjects\\MyProject4\\resources\\" + newFileName;
+
+         String uploadedFileLocation = "C:\\Users\\Rachel\\IdeaProjects\\MyProjectTomHoldenv6\\resources\\" + newFileName;
 
         try {
             int read = 0;

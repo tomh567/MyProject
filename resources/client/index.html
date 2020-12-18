@@ -6,7 +6,7 @@
     <title>CricketList - Home</title>
 
     <script src="/client/js/js.cookie.min.js"></script>
-    <script src="/client/js/uploadPicture.js"></script>
+    <script src="/client/js/index.js"></script>
     <script src="/client/js/layout.js"></script>
 
     <link rel="stylesheet" href="/client/css/styles.css">
@@ -75,31 +75,23 @@
 <div id="uploadImage">
     <h2>Upload Picture</h2>
     <p>Chose a picture to upload to the site!</p>
-    <form id="uploadImageForm">
+    <form id="frmUploadImage">
         <input type="file" id="the-file" name="filename" class="goldButton" accept="image/png, image/jpg">
         <br/>
-        <br/>
-
-    </form>
-    <button class="goldButton" onclick="uploadPicture()" id="toServerButton"> SUBMIT</button>
-</div>
-
-<!-- Picture Details -->
-<div id="pictureDetails">
-    <form id="addDetailsToPictures">
         <h2>Add Details to your Image</h2>
         <p>Add a date, comment and name to your image!</p>
-        <input type="text" id="imageDate" class="containerInput" placeholder="Add Date: yyyy-mm-dd"/>
+        <input type="text" id="imageDate" name="date" class="containerInput" placeholder="Add Date: yyyy-mm-dd"/>
         <br/>
         <br/>
-        <input type="text" id="imageComment" class="containerInput" placeholder="Add Comment To Image"/>
+        <input type="text" id="imageComment" name="comment" class="containerInput" placeholder="Add Comment To Image"/>
         <br/>
         <br/>
-        <input type="text" id="imageName" class="containerInput" placeholder="Add Name To Image"/>
+        <input type="text" id="imageName" name="name" class="containerInput" placeholder="Add Name To Image"/>
         <br/>
         <br/>
-        <button class="goldButton" id="submitPictureDetails" onclick="addImageDetails()" >Upload Image</button>
+
     </form>
+    <button class="goldButton" id="submitPictureDetails" onclick="index()" >Upload Image</button>
 </div>
 
 <label><label id="notifications"><b>0</b></label> New notifications</label>
