@@ -29,6 +29,7 @@ function formatPictureList(response) {
         dataHTML += `    <div><img style="max-width: 400px" src="${item.ImagePath}"></div>`;
         dataHTML += `    <div>${item.Comment}</div>`;
         dataHTML += `</div>`;
+        dataHTML += '<br />';
 
     }
     document.getElementById("picturesDiv").innerHTML = dataHTML;
