@@ -64,10 +64,10 @@ function uploadPicture() {
 
 function addImageDetails() {
     console.log("test for getting image stuff");
-    var date = document.getElementById("imageDate");
-    var comment = document.getElementById("imageComment");
-    var name = document.getElementById("imageName");
-    fetch("pictures/userImage", {
+    var date = document.getElementById("imageDate").value;
+    var comment = document.getElementById("imageComment").value;
+    var name = document.getElementById("imageName").value;
+    fetch("/pictures/userImage", {
         method: "POST",
         body: formData, userID, date, comment, name,
     }).then(response => {
@@ -85,7 +85,7 @@ function addImageDetails() {
 
 
 function formatPictureListUpload(response) {
-    console.log("Invoked pictures()");
+    console.log("Invoked pictures upload()");
 
     let dataHTML = "";
 

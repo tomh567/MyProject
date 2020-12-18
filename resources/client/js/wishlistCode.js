@@ -35,13 +35,11 @@ function addRow() {
         let tableCollumns = "";
         tableCollumns +=
             '<tr>' +
-                '<th>Type</th>' +
-                '<th>Link</th>' +
-                '<th>Price</th>' +
-                '<th>Name</th>' +
+                '<th>Type </th>' +
+                '<th>Link </th>' +
+                '<th>Price </th>' +
+                '<th>Name </th>' +
             '</tr>';
-
-        tableRow += '<img src="https://img.icons8.com/windows/96/000000/cricket.png"/>'
 
         document.getElementById("tableSpace").innerHTML = tableCollumns;
         createHeadTable = false;
