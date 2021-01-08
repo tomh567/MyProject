@@ -27,7 +27,7 @@ public class Pictures {
         System.out.println("Invoked pictures.picturesTopSix()");
         JSONArray response = new JSONArray();
         try {
-            PreparedStatement ps = Main.db.prepareStatement("SELECT PictureID, UserID, Date, Comment, Name, ImagePath FROM Pictures LIMIT 6");
+            PreparedStatement ps = Main.db.prepareStatement("SELECT PictureID, UserID, Date, Comment, Name, ImagePath FROM Pictures ORDER BY Date desc  LIMIT 6");
             ResultSet results = ps.executeQuery();
             while (results.next()==true) {
                 JSONObject row = new JSONObject();
